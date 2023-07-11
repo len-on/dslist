@@ -8,22 +8,36 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tb_name")
+@Table(name="tb_game")
 public class Game {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title")
     private String title;
 
     @Column(name = "game_year")
     private Integer year;
+
+    @Column(name = "genre")
     private String genre;
+
+    @Column(name = "platforms")
     private String platfroms;
+
+    @Column(name = "score")
     private Double score;
+
+    @Column(name = "img_url")
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT", name = "short_description")
     private String shortDescription;
+
+
+    @Column(columnDefinition = "TEXT", name = "long_description")
     private String longDescription;
 
     public Game(Long id, String title, Integer year, String genre, String platfroms, Double score, String imgUrl,
